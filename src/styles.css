@@ -10,3 +10,9 @@
     margin-right: auto;
     width: 50%;
   }
+
+  .error-font{
+    font-size: 15px;
+    color: red;
+    font-style: italic;
+  }
