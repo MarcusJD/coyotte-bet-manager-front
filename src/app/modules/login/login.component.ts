@@ -26,13 +26,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  logar() {
-    this.authService.loginss(this.form.get('login').value, this.form.get('senha').value).subscribe(response=>{
-      console.log(response);
-    },
-    (err) =>{
-      console.log(err);
-    });
+  public logar() {
+      this.authService.login(this.form.get('login').value, this.form.get('senha').value);
   }
 
 }

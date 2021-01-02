@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
 import { ReactiveFormsModule } from '@angular/forms';
 import {SharedModule} from '../../shared/shared.module';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,18 @@ import {SharedModule} from '../../shared/shared.module';
       InputTextModule,
       PasswordModule,
       ReactiveFormsModule,
-      SharedModule
+      SharedModule,
+      JwtModule.forRoot({
+        config: {
+          tokenGetter: () => {
+            return '';
+          }
+        }
+      })
   ],
   exports:[
       LoginComponent
-  ]
+  ],
+  providers:[JwtHelperService]
 })
 export class LoginModule { }
