@@ -10,7 +10,7 @@
         <i class="pi pi-key"></i><input type="password" formControlName="senha" placeholder="Senha" pPassword [feedback]="false" style="margin-bottom: 12px;" required/>
         <cbm-validator-message *ngIf="form.get('senha').dirty && form.get('senha').errors?.required" [styles]="validationMessageStyles" [message]="'Campo senha obrigatório.'" ></cbm-validator-message>
 
-        <button pButton pRipple type="button" label="Login" class="p-button-raised p-button-warning login-button-left" [disabled]="form.invalid" ></button>
+        <button pButton pRipple (click)="logar()" type="button" label="Login" class="p-button-raised p-button-warning login-button-left" [disabled]="form.invalid" ></button>
         <button pButton pRipple type="button" label="Cadastre-se" class="p-button-raised p-button-warning login-button-right"></button>
     </form>
 </div>
